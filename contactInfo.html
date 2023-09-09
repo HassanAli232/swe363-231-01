@@ -22,6 +22,49 @@
       <a href="https://github.com/HassanAli232">HassanAli232</a>
     </div>
 
+    <label>Send a Message to us</label>
+
+    <!-- The form to send messages -->
+    <form method="get" action="thank.html" autocomplete="on">
+      <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="ex. Ali Hassan" />
+      </div>
+      <div>
+        <label for="user">email: </label>
+        <input
+          type="email"
+          name="user"
+          id="user"
+          placeholder="example@gmail.com"
+          required
+        />
+      </div>
+      <div>
+        <label for="title">Title: </label>
+        <input
+          type="text"
+          id="title"
+          name="emailTitle"
+          placeholder="A new Algorithm to explain"
+          required
+        />
+      </div>
+
+      <label for="message">Message: </label>
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          required
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <button type="reset">Reset</button>
+      <button type="submit">Send</button>
+    </form>
+
     <a href="/index.html">Home</a>
   </body>
 </html>
