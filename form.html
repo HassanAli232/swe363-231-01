@@ -3,10 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contribution Page</title>
   </head>
   <body>
-    <div>Coming soon</div>
+    <h1>Contribute to our website</h1>
+    <h3>
+      Here you can contribute by an explaining and simplifing any topic related
+      to AI!
+    </h3>
+    <p>
+      1- Your submission will be validated whenever it is possible. If your
+      contribution is fulfilling our terms, it would be improved, modified, or
+      unchanged.<br />2- You will be part of our contributers list when one or
+      more contributions were useful for the website.<br />3- In case of similar
+      contributions, the fisrt one will be proved.
+    </p>
+
+    <form
+      action="thank.html"
+      method="get"
+      autocomplete="on"
+      enctype="multipart/form-data"
+    >
+      <h2>Your personal Information:</h2>
+      <div>
+        <label for="firstName">firstName:* </label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          placeholder="ex. Ali"
+          required
+        />
+        <label for="lastName">Last Name:* </label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          placeholder="ex. Alhassan"
+          required
+        />
+      </div>
+      <div>
+        <label for="age">Age:* </label>
+        <input type="number" name="age" id="age" min="15" max="120" required />
+
+        <label for="male">male</label>
+        <input type="radio" name="gender" id="male" value="male" required />
+        <label for="female">female</label>
+        <input type="radio" name="gender" id="female" value="female" required />
+      </div>
+      <div>
+        <label for="user">email:* </label>
+        <input
+          type="email"
+          name="user"
+          id="user"
+          placeholder="example@gmail.com"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="">Your Degree:* </label>
+        <div>
+          <label for="high school">High school</label>
+          <input
+            type="radio"
+            name="degree"
+            id="high school"
+            value="high school"
+            required
+          />
+        </div>
+        <div>
+          <label for="bachelor">Bachelor</label>
+          <input
+            type="radio"
+            name="degree"
+            id="bachelor"
+            value="bachelor"
+            required
+          />
+        </div>
+        <div>
+          <label for="master">Master</label>
+          <input
+            type="radio"
+            name="degree"
+            id="master"
+            value="master"
+            required
+          />
+        </div>
+        <div>
+          <label for="phd">Phd</label>
+          <input type="radio" name="degree" id="phd" value="phd" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="linkedIn">linkedIn:* </label>
+        <input type="url" id="linkedIn" name="linkedIn" required />
+      </div>
+
+      <div>
+        <label for="github">GitHub: </label>
+        <input type="url" id="github" name="github" />
+      </div>
+
+      <h2>Contribution Information</h2>
+      <div>
+        <label for="domain">Domain:* </label>
+        <input type="text" list="domains" name="domain" id="domain" required />
+
+        <datalist id="domains">
+          <option value="AI">AI</option>
+          <option value="ML">ML</option>
+          <option value="DL">DL</option>
+          <option value="RL">RL</option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="topic">Topic:* </label>
+        <input type="text" name="topic" id="topic" required />
+      </div>
+
+      <div>
+        <label for="contributedIllustration">
+          Your illustration of the topic:*
+        </label>
+
+        <p>You should explain the topic as you want it to be in our website.</p>
+
+        <textarea
+          name="contributedIllustration"
+          id="contributedIllustration"
+          required
+          minlength="500"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="file">File</label>
+        <input type="file" name="file" id="file" />
+      </div>
+      <div>
+        <div><label for="details">How you want it to be present?* </label></div>
+        <textarea
+          name="details"
+          id="details"
+          cols="30"
+          rows="10"
+          required
+          minlength="150"
+        ></textarea>
+      </div>
+      <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
     <a href="/index.html">Home</a>
   </body>
 </html>
