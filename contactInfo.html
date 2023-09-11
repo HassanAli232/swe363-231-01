@@ -6,64 +6,81 @@
     <title>contact us</title>
   </head>
   <body>
-    <!-- Contact information -->
-    <div>
-      <label>Email: </label>
-      <a href="mailto:hassan.alsayhah@gmail.com">hassan.alsayhah@gmail.com</a>
-    </div>
+    <header>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/AI.html">Artificial Intelligence</a>
+        <a href="/ML.html">Machine Learning</a>
+        <a href="/form.html">Contribute</a>
+      </nav>
+      <h1>Contact Information</h1>
 
-    <div>
-      <label>Number: </label>
-      <a href="tel:+966563929094">+996 56 392 9094</a>
-    </div>
-
-    <div>
-      <label>GitHub: </label>
-      <a href="https://github.com/HassanAli232">HassanAli232</a>
-    </div>
-
-    <label>Send a Message to us</label>
-
-    <!-- The form to send messages -->
-    <form method="get" action="thank.html" autocomplete="on">
+      <!-- Contact information -->
       <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" placeholder="ex. Ali Hassan" />
-      </div>
-      <div>
-        <label for="user">email: </label>
-        <input
-          type="email"
-          name="user"
-          id="user"
-          placeholder="example@gmail.com"
-          required
-        />
-      </div>
-      <div>
-        <label for="title">Title: </label>
-        <input
-          type="text"
-          id="title"
-          name="emailTitle"
-          placeholder="A new Algorithm to explain"
-          required
-        />
+        <label>Email: </label>
+        <a href="mailto:hassan.alsayhah@gmail.com">hassan.alsayhah@gmail.com</a>
       </div>
 
-      <label for="message">Message: </label>
       <div>
-        <textarea
-          id="message"
-          name="message"
-          required
-          cols="30"
-          rows="10"
-        ></textarea>
+        <label>Number: </label>
+        <a href="tel:+966563929094">+996 56 392 9094</a>
       </div>
-      <button type="reset">Reset</button>
-      <button type="submit">Send</button>
-    </form>
+
+      <div>
+        <label>GitHub: </label>
+        <a href="https://github.com/HassanAli232">HassanAli232</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>Send a Message to us</h2>
+
+      <!-- The form to send messages -->
+      <form method="get" action="thank.html" autocomplete="on">
+        <div>
+          <label for="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="ex. Ali Hassan"
+          />
+        </div>
+        <div>
+          <label for="user">email: </label>
+          <input
+            type="email"
+            name="user"
+            id="user"
+            placeholder="example@gmail.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="title">Title: </label>
+          <input
+            type="text"
+            id="title"
+            name="emailTitle"
+            placeholder="A new Algorithm to explain"
+            required
+          />
+        </div>
+
+        <label for="message">Message: </label>
+        <div>
+          <textarea
+            id="message"
+            name="message"
+            required
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <button type="reset">Reset</button>
+        <button type="submit">Send</button>
+      </form>
+    </main>
 
     <a href="/index.html">Home</a>
   </body>
