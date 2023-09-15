@@ -10,3 +10,22 @@ a {
 a:visited {
   color: rgb(255, 156, 27);
 }
+
+thead {
+  text-transform: uppercase;
+}
+
+.top {
+  background-color: #ecaa4d;
+}
+
+em {
+  background-color: blue;
+  padding: 2px;
+}
+
+#the_most_important {
+  text-transform: uppercase;
+  /* gold color but with some transparency*/
+  background-color: rgba(255, 217, 0, 0.633);
+}
