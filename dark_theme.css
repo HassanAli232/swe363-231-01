@@ -5,10 +5,16 @@ body {
 
 a {
   color: rgb(255, 72, 17);
+  text-decoration: none;
 }
 
 a:visited {
   color: rgb(255, 156, 27);
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 thead {
@@ -28,4 +34,56 @@ em {
   text-transform: uppercase;
   /* gold color but with some transparency*/
   background-color: rgba(255, 217, 0, 0.633);
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+
+h2 + p::first-letter {
+  font-size: x-large;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #4b5162;
+}
+
+tbody tr:hover,
+.top:hover {
+  background-color: rgb(109, 153, 192);
+}
+
+nav ul li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul li:first-child a {
+  color: rgb(222, 202, 47);
+  text-decoration: underline;
+}
+
+::selection {
+  background: #dd01ff;
+}
+
+input {
+  height: 20px;
+}
+
+input[type="text"] {
+  border: 4px solid lightgray;
+}
+
+input[name="message"] {
+  height: 50px;
 }
