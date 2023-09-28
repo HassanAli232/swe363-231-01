@@ -1,20 +1,52 @@
 body {
-  background-color: #222;
-  color: #eee;
+  background-color: #fff;
+  font-size: 16px;
+  color: #000;
 }
 
-a {
-  color: rgb(255, 72, 17);
+.logo {
+  display: flex;
+  width: 17.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.link {
+  color: var(--indium-technology-red, #eb3f57);
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+li a {
   text-decoration: none;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-a:visited {
-  color: rgb(255, 156, 27);
+li a:visited {
+  color: #000;
 }
 
-a:hover {
+.link:visited {
+  color: #8c3945;
+}
+
+li a:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: var(--indium-technology-red, #eb3f57);
+  font-family: Open Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 thead {
@@ -34,6 +66,57 @@ em {
   text-transform: uppercase;
   /* gold color but with some transparency*/
   background-color: rgba(255, 217, 0, 0.633);
+}
+
+h1 {
+  color: #eb3f57;
+  font-family: Open Sans;
+  text-align: center;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  color: var(--indium-technology-red, #eb3f57);
+  /* 36px */
+  font-family: Open Sans;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+p,
+td {
+  color: #000;
+
+  /* 21px */
+  font-family: Open Sans;
+  font-size: 1.3125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+label {
+  display: flex;
+  width: 4.3125rem;
+  height: 1.1875rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: var(--text-color-dark, #252f40);
+
+  /* H6 Tiny - 12px/Bold */
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.0625rem; /* 8.333% */
 }
 
 h2 {
@@ -67,8 +150,12 @@ nav ul li {
   padding: 10px;
 }
 
+footer ul li {
+  display: inline;
+  padding: 10px;
+}
+
 nav ul li:first-child a {
-  color: rgb(222, 202, 47);
   text-decoration: underline;
 }
 
@@ -76,14 +163,88 @@ nav ul li:first-child a {
   background: #dd01ff;
 }
 
-input {
-  height: 20px;
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="number"] {
+  display: inline-flex;
+  height: 2.5rem;
+  padding: 0rem 4rem 0rem 2rem;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 0.9375rem;
+  background: #f5f5fa;
+
+  /* Inner shadow 2 */
+  box-shadow: -5px -5px 10px 0px #fff inset,
+    5px 5px 10px 0px rgba(170, 170, 204, 0.5) inset,
+    2px 2px 4px 0px rgba(170, 170, 204, 0.25) inset,
+    -2px -2px 4px 0px rgba(255, 255, 255, 0.5) inset;
 }
 
-input[type="text"] {
-  border: 4px solid lightgray;
+.note {
+  display: flex;
+  width: 40.75rem;
+  height: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: var(--text-color-slate-gray, #67748e);
+
+  /* H5 - 20px/Regular */
+  font-family: Open Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem; /* 90% */
 }
 
-input[name="message"] {
-  height: 50px;
+textarea {
+  display: inline-flex;
+  height: 8.8125rem;
+  padding: 1.1875rem 3.875rem 7rem 2.125rem;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  background: #f5f5fa;
+
+  /* Inner shadow 2 */
+  box-shadow: -5px -5px 10px 0px #fff inset,
+    5px 5px 10px 0px rgba(170, 170, 204, 0.5) inset,
+    2px 2px 4px 0px rgba(170, 170, 204, 0.25) inset,
+    -2px -2px 4px 0px rgba(255, 255, 255, 0.5) inset;
+}
+
+.rights {
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+button {
+  color: #fff;
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+
+  display: inline-flex;
+  padding: 0.625rem 0.8125rem 0.6875rem 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  background: var(
+    --indium-technology-new-gradient,
+    linear-gradient(180deg, #eb3f57 0%, #893944 100%)
+  );
+  box-shadow: 10px 10px 20px 0px rgba(170, 170, 204, 0.5),
+    5px 5px 10px 0px rgba(170, 170, 204, 0.25);
 }
