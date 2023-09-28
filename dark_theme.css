@@ -282,22 +282,44 @@ button:hover {
   cursor: pointer;
 }
 
-ul {
-  visibility: hidden;
+nav ul li {
+  opacity: 0;
 }
 
-.container:hover + nav ul,
-ul:hover {
-  visibility: visible;
-  animation: navItems 2s linear 3.5s infinite direction fill-mode;
+/* nav ul.menu li a {
+  color: #dd01ff;
+} */
+
+.container:hover ul.menu li a {
+  opacity: 1;
+  animation: fadeInUp 0.5s linear;
 }
 
-@keyframes navItems {
-  100% {
-    nav ul li:nth-child(n) {
-      visibility: visible;
-    }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
   }
+}
+
+/* Delay each list item by a staggered amount */
+ul.menu li:nth-child(1) a {
+  animation-delay: 0.5s;
+}
+
+ul.menu li:nth-child(2) a {
+  animation-delay: 1s;
+}
+
+ul.menu li:nth-child(3) a {
+  animation-delay: 1.5s;
+}
+
+ul.menu li:nth-child(4) a {
+  animation-delay: 2s;
+}
+
+ul.menu li:nth-child(5) a {
+  animation-delay: 2.5s;
 }
 
 .bar1,
