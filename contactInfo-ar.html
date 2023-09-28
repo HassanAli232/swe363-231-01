@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dark_theme.css" />
+    <title>اتصل بنا</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/index-ar.html">الصفحة الرئيسية</a></li>
+          <li><a href="/AI-ar.html">ذكاء اصطناعي</a></li>
+          <li><a href="/ML-ar.html">تعلم الآلة</a></li>
+          <li><a href="/form-ar.html">ساهم</a></li>
+          <li><a href="/index.html">En</a></li>
+        </ul>
+      </nav>
+      <h1>معلومات الاتصال</h1>
+
+      <!-- معلومات الاتصال -->
+      <div>
+        <label>البريد الإلكتروني: </label>
+        <a class="link" href="mailto:hassan.alsayhah@gmail.com"
+          >hassan.alsayhah@gmail.com</a
+        >
+      </div>
+
+      <div>
+        <label>الرقم: </label>
+        <a class="link" href="tel:+966563929094">+996 56 392 9094</a>
+      </div>
+
+      <div>
+        <label>GitHub: </label>
+        <a class="link" href="https://github.com/HassanAli232">HassanAli232</a>
+      </div>
+    </header>
+
+    <main>
+      <h2>أرسل رسالة إلينا</h2>
+
+      <!-- النموذج لإرسال الرسائل -->
+      <form method="get" action="thank.html" autocomplete="on">
+        <div>
+          <label for="name">الاسم: </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="مثلا، علي حسن"
+          />
+        </div>
+        <div>
+          <label for="user">البريد الإلكتروني: </label>
+          <input
+            type="email"
+            name="user"
+            id="user"
+            placeholder="example@gmail.com"
+            required
+          />
+        </div>
+        <div>
+          <label for="title">العنوان: </label>
+          <input
+            type="text"
+            id="title"
+            name="emailTitle"
+            placeholder="خوارزمية جديدة للشرح"
+            required
+          />
+        </div>
+
+        <label for="message">الرسالة: </label>
+        <div>
+          <textarea
+            id="message"
+            name="message"
+            required
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <button type="reset">مسح</button>
+        <button type="submit">إرسال</button>
+      </form>
+    </main>
+
+    <footer>
+      <ul>
+        <li class="rights">&copy; هذا الموقع بعمل حسن السيحه</li>
+        <li><a href="index-ar.html">الصفحة الرئيسية</a></li>
+        <li><a href="./form-ar.html">ساهم</a></li>
+        <li><a href="./contactInfo-ar.html">تواصل معنا</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

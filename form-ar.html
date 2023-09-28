@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dark_theme.css" />
+    <title>صفحة المساهمة</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+            <li><a href="/form-ar.html">ساهم</a></li>
+            <li><a href="/index-ar.html">الصفحة الرئيسية</a></li>
+            <li><a href="/AI-ar.html">ذكاء اصطناعي</a></li>
+            <li><a href="/ML-ar.html">تعلم الآلة</a></li>
+            <li><a href="/index.html">En</a></li>
+        </ul>
+      </nav>
+      <h1>ساهم في موقعنا</h1>
+    </header>
+    <section>
+      <h3>
+        هنا يمكنك المساهمة بشرح وتبسيط أي موضوع يتعلق بالذكاء الاصطناعي!
+      </h3>
+      <p>
+        1- سيتم التحقق من تقديمك في حالة الإمكان. إذا كانت مساهمتك تلبي شروطنا، ستتم مراجعتها وتحسينها أو تعديلها أو تركها كما هي.<br />2- ستكون جزءًا من قائمة المساهمين لدينا عندما يكون لديك مساهمة واحدة على الأقل تكون مفيدة للموقع.<br />3- في حالة وجود مساهمات مماثلة، سيتم الموافقة على الأولى.
+      </p>
+    </section>
+    <form
+      action="thank.html"
+      method="get"
+      autocomplete="on"
+      enctype="multipart/form-data"
+    >
+      <section>
+        <h2>معلوماتك الشخصية:</h2>
+        <div>
+          <label for="firstName">الاسم الأول:* </label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="مثال: علي"
+            required
+          />
+          <label for="lastName">اسم العائلة:* </label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="مثال: الحسن"
+            required
+          />
+        </div>
+        <div>
+          <label for="age">العمر:* </label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="15"
+            max="120"
+            required
+          />
+
+          <label for="male">ذكر</label>
+          <input type="radio" name="gender" id="male" value="ذكر" required />
+          <label for="female">أنثى</label>
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="أنثى"
+            required
+          />
+        </div>
+        <div>
+          <label for="user">الإيميل:* </label>
+          <input
+            type="email"
+            name="user"
+            id="user"
+            placeholder="مثال: example@gmail.com"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="">الدرجة العلمية:* </label>
+          <div>
+            <label for="high school">المدرسة الثانوية</label>
+            <input
+              type="radio"
+              name="degree"
+              id="high school"
+              value="المدرسة الثانوية"
+              required
+            />
+          </div>
+          <div>
+            <label for="bachelor">البكالوريوس</label>
+            <input
+              type="radio"
+              name="degree"
+              id="bachelor"
+              value="البكالوريوس"
+              required
+            />
+          </div>
+          <div>
+            <label for="master">الماجستير</label>
+            <input
+              type="radio"
+              name="degree"
+              id="master"
+              value="الماجستير"
+              required
+            />
+          </div>
+          <div>
+            <label for="phd">الدكتوراه</label>
+            <input type="radio" name="degree" id="phd" value="الدكتوراه" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="linkedIn">لينكدإن:* </label>
+          <input type="url" id="linkedIn" name="linkedIn" required />
+        </div>
+
+        <div>
+          <label for="github">جيت هاب: </label>
+          <input type="url" id="github" name="github" />
+        </div>
+      </section>
+      <section>
+        <h2>معلومات المساهمة</h2>
+        <div>
+          <label for="domain">المجال:* </label>
+          <input
+            type="text"
+            list="domains"
+            name="domain"
+            id="domain"
+            required
+          />
+
+          <datalist id="domains">
+            <option value="الذكاء الاصطناعي">الذكاء الاصطناعي</option>
+            <option value="تعلم الآلة">تعلم الآلة</option>
+            <option value="التعلم العميق">التعلم العميق</option>
+            <option value="التعلم التعويضي">التعلم التعويضي</option>
+          </datalist>
+        </div>
+
+        <div>
+          <label for="topic">الموضوع:* </label>
+          <input type="text" name="topic" id="topic" required />
+        </div>
+
+        <div>
+          <label for="contributedIllustration"> الشرح:* </label>
+
+        <div class="note">
+            يجب عليك شرح الموضوع كما ترغب في رؤيته على موقعنا.*
+            </div>
+
+            <textarea
+            name="contributedIllustration"
+            id="contributedIllustration"
+            required
+            minlength="500"
+            cols="30"
+            rows="10"
+            ></textarea>
+        </div>
+
+        <div>
+            <label for="file">ملف:</label>
+            <input type="file" name="file" id="file" />
+        </div>
+        <div>
+            <div>
+            <div class="note" for="details">كيف ترغب في تقديمه؟* </label>
+            </div>
+            <textarea
+            name="details"
+            id="details"
+            cols="30"
+            rows="10"
+            required
+            minlength="150"
+            ></textarea>
+        </div>
+        </section>
+
+        <div>
+        <button type="reset">إعادة تعيين</button>
+        <button type="submit">إرسال</button>
+        </div>
+    </form>
+
+    <footer>
+        <ul>
+        <li class="rights">&copy; هذا الموقع بعمل حسن السيحه</li>
+        <li><a href="index-ar.html">الصفحة الرئيسية</a></li>
+        <li><a href="./form-ar.html">ساهم</a></li>
+        <li><a href="./contactInfo-ar.html">تواصل معنا</a></li>
+        </ul>
+    </footer>
+    </body>
+</html>
