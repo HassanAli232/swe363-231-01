@@ -349,6 +349,7 @@ ul.menu:hover li,
   justify-content: center;
   align-items: center;
   animation: fadeout 2s linear 1s forwards;
+  z-index: 100;
 }
 
 .loader {
@@ -359,6 +360,7 @@ ul.menu:hover li,
   border-radius: 50%;
   border-color: #eb3f56 #eb3f57 #eb3f57 #fff;
   animation: spin 2s ease-in infinite;
+  z-index: 100;
 }
 
 @keyframes spin {
@@ -385,3 +387,41 @@ ul.menu:hover li,
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.image_container {
+  position: relative;
+}
+
+.water_mark-ar {
+  position: absolute;
+  color: #fff;
+  opacity: 0.2;
+  font-size: 5rem;
+  top: 1rem;
+  right: 5.5rem;
+}
+
+.water_mark {
+  position: absolute;
+  color: #fff;
+  opacity: 0.2;
+  font-size: 5rem;
+  top: 1rem;
+  left: 5.5rem;
+}
+
+.header_date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* .date {
+  display: inline;
+  align-self: flex-end;
+} */
