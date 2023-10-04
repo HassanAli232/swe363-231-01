@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      button {
+        color: #fff;
+        font-family: Open Sans;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+
+        display: inline-flex;
+        padding: 0.625rem 0.8125rem 0.6875rem 1rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        background: var(
+          --indium-technology-new-gradient,
+          linear-gradient(180deg, #eb3f57 0%, #893944 100%)
+        );
+        box-shadow: 10px 10px 20px 0px rgba(170, 170, 204, 0.5),
+          5px 5px 10px 0px rgba(170, 170, 204, 0.25);
+      }
+
+      button:hover {
+        animation: buttonAnimation 3s;
+        display: inline-flex;
+        padding: 0.5625rem 1.125rem 0.5625rem 1.1875rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2.5rem;
+
+        /* Inner shadow 1 */
+        box-shadow: -1px -1px 2px 0px #fff inset,
+          1px 1px 2px 0px rgba(170, 170, 204, 0.5) inset;
+      }
+
+      .cell {
+        font-family: sans-serif;
+        font-size: larger;
+        font-weight: bolder;
+        background-color: beige;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cell_chosen {
+        font-family: sans-serif;
+        font-size: larger;
+        font-weight: bolder;
+        background-color: #dcf5eef7;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cell:hover {
+        background-color: blanchedalmond;
+      }
+
+      .row {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="turn">Now it's is <span>X</span> turn</h1>
+    <!-- Board -->
+    <div class="board">
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+      <div class="row">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+    <li><a href="/index.html">Home/الصفحة الرئيسية</a></li>
+    <button id="reset">Reset</button>
+    <script>
+      // decided which turn is it
+      let turn = "X";
+      let gameEnded = false;
+
+      // when we click on a cell add the letter
+      let board = document.getElementsByClassName("board")[0];
+      board.addEventListener("click", cellClicked);
+
+      let button = document
+        .getElementById("reset")
+        .addEventListener("click", () => {
+          let board = document.getElementsByClassName("board")[0];
+
+          let children = board.children;
+
+          for (let i = 0; i < children.length; i++) {
+            let cells = children[i].children;
+
+            for (let j = 0; j < cells.length; j++) {
+              cells[j].innerText = "";
+              cells[j].className = "cell";
+            }
+          }
+
+          turn = "X";
+          gameEnded = false;
+
+          let turnLetter = document.getElementById("turn");
+          turnLetter.innerHTML = "Now it's is <span>X</span> turn";
+        });
+
+      function cellClicked(event) {
+        if (gameEnded) {
+          return;
+        }
+
+        let cell = event.target;
+        if (cell.innerText !== "") {
+          //   alert("This cell is not empty!");
+          return;
+        }
+        cell.innerText = turn;
+        cell.className = "cell_chosen";
+
+        gameEnded = checkGame(document.getElementsByClassName("board")[0]);
+
+        if (gameEnded) {
+          console.log("Game Ended!!");
+          console.log(gameEnded);
+
+          turnLetter = document.getElementById("turn");
+
+          if (gameEnded === "X" || gameEnded === "O")
+            turnLetter.innerHTML = "Player " + gameEnded + " is the Winner!!";
+          else {
+            turnLetter.innerHTML = "This is a Draw!";
+          }
+        } else {
+          // change turn
+          turn = turn === "X" ? "O" : "X";
+
+          //change title
+          turnLetter = document.querySelector("#turn span");
+          turnLetter.innerText = turn;
+        }
+      }
+
+      function checkGame(board) {
+        let boardResult = [
+          ["", "", ""],
+          ["", "", ""],
+          ["", "", ""],
+        ];
+
+        console.log(board.children);
+
+        let children = board.children;
+
+        for (let i = 0; i < children.length; i++) {
+          let cells = children[i].children;
+
+          for (let j = 0; j < cells.length; j++) {
+            boardResult[i][j] = cells[j].innerText;
+          }
+        }
+
+        // Checking rows.
+        for (let i = 0; i < 3; i++) {
+          let row = boardResult[i];
+          console.log(row);
+          if (row[0] === row[1] && row[1] === row[2] && row[2] !== "") {
+            return row[0];
+          }
+        }
+
+        for (let i = 0; i < 3; i++) {
+          if (
+            boardResult[0][i] === boardResult[1][i] &&
+            boardResult[1][i] === boardResult[2][i] &&
+            boardResult[2][i] !== ""
+          ) {
+            return boardResult[0][i];
+          }
+        }
+
+        // checking first diagonal.
+        if (
+          boardResult[0][0] === boardResult[1][1] &&
+          boardResult[1][1] === boardResult[2][2] &&
+          boardResult[2][2] !== ""
+        ) {
+          return boardResult[0][0];
+        }
+
+        // checking second diagonal.
+        if (
+          boardResult[0][2] === boardResult[1][1] &&
+          boardResult[1][1] === boardResult[2][0] &&
+          boardResult[2][0] !== ""
+        ) {
+          return boardResult[0][2];
+        }
+
+        draw = true;
+
+        for (let i = 0; i < 3; i++) {
+          for (let j = 0; j < 3; j++) {
+            if (boardResult[i][j] === "") draw = false;
+          }
+        }
+
+        return draw;
+      }
+    </script>
+  </body>
+</html>
