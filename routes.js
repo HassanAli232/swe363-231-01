@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const router = express.Router();
 
-// Define your routes
+// Define the routes
 router.get("/", (req, res) => {
   res.sendFile("index.html", { root: path.join(__dirname) });
 });

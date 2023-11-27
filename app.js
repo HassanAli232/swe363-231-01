@@ -3,13 +3,13 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-// Middleware to serve static files (like your HTML pages)
+// Middleware to serve static files
 app.use(express.static("./"));
 
 // Import the router
 const mainRouter = require("./routes");
 
-// Use the router for your main routes
+// Use the router
 app.use("/", mainRouter);
 
 // Handle 404 - Not Found
