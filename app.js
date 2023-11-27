@@ -6,38 +6,11 @@ const port = 3000;
 // Middleware to serve static files (like your HTML pages)
 app.use(express.static("./"));
 
-// Define your routes
-app.get("/", (req, res) => {
-  res.sendFile("index.html", { root: path.join(__dirname) });
-});
+// Import the router
+const mainRouter = require("./routes");
 
-app.get("/home", (req, res) => {
-  res.sendFile("index.html", { root: path.join(__dirname) });
-});
-
-app.get("/AI", (req, res) => {
-  res.sendFile("AI.html", { root: path.join(__dirname) });
-});
-
-app.get("/ML", (req, res) => {
-  res.sendFile("ML.html", { root: path.join(__dirname) });
-});
-
-app.get("/form", (req, res) => {
-  res.sendFile("form.html", { root: path.join(__dirname) });
-});
-
-app.get("/ttt", (req, res) => {
-  res.sendFile("ttt.html", { root: path.join(__dirname) });
-});
-
-app.get("/index-ar", (req, res) => {
-  res.sendFile("index-ar.html", { root: path.join(__dirname) });
-});
-
-app.get("/contactInfo", (req, res) => {
-  res.sendFile("contactInfo.html", { root: path.join(__dirname) });
-});
+// Use the router for your main routes
+app.use("/", mainRouter);
 
 // Handle 404 - Not Found
 app.use((req, res) => {
