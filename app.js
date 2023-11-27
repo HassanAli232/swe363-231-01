@@ -1,10 +1,14 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
 // Middleware to serve static files
 app.use(express.static("./"));
+
+// Use body-parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Import the router
 const mainRouter = require("./routes");

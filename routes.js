@@ -35,5 +35,15 @@ router.get("/contactInfo", (req, res) => {
   res.sendFile("contactInfo.html", { root: path.join(__dirname) });
 });
 
+// Route to handle form submission
+router.post("/process-form", (req, res) => {
+  // Process form data
+  const formData = req.body;
+  console.log("Form Data:", formData);
+
+  // Send a confirmation response to the user
+  res.sendFile("thank.html", { root: path.join(__dirname) });
+});
+
 // Export the router
 module.exports = router;
